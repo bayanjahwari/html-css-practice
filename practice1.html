@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxpayer Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #000;
+            background-color: #fff;
+            min-height: 95vh;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+        }
+
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 5px 0 15px 0;
+            color: #333;
+        }
+
+        .nav-links {
+            margin-bottom: 15px;
+        }
+
+        .nav-links a {
+            color: blue;
+            text-decoration: underline;
+            margin-right: 15px;
+        }
+
+        .search-section {
+            margin-bottom: 20px;
+        }
+
+        .search-section input[type="text"] {
+            padding: 4px;
+            width: 180px;
+        }
+
+        .search-section button {
+            padding: 4px 8px;
+            cursor: pointer;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #ddd;
+            margin: 25px 0;
+        }
+
+        .learning-goal {
+        
+            padding: 8px 12px;
+            display: inline-block;
+            margin-bottom: 15px;
+                }
+
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="date"],
+        .form-group input[type="month"],
+        .form-group input[type="time"],
+        .form-group input[type="number"],
+        .form-group select,
+        .form-group textarea {
+            padding: 6px;
+            width: 250px;
+            border: 1px solid #777;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            height: 80px;
+            width: 400px;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            max-width: 600px;
+        }
+
+        legend {
+            font-weight: bold;
+            font-size: 1em;
+            padding: 0 5px;
+        }
+
+        .checkbox-group label,
+        .radio-group label {
+            display: inline;
+            font-weight: normal;
+        }
+
+        .checkbox-group,
+        .radio-group {
+            margin-bottom: 8px;
+        }
+
+        .btn-action {
+            padding: 6px 12px;
+            background-color: #f0f0f0;
+            border: 1px solid #000;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .btn-action:hover {
+            background-color: #e0e0e0;
+        }
+
+        .calculation-output {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Taxpayer Portal</h1>
+    <p>Online Tax Services</p>
+
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Tax Filing</a>
+        <a href="#">Payments</a>
+        <a href="#">Support</a>
+        <a href="#">About</a>
+    </div>
+
+    <div class="search-section">
+        <label for="search">Search the portal</label>
+        <br>
+        <input type="text" id="search" placeholder="e.g. VAT return">
+        <button type="button">Search</button>
+    </div>
+
+    <hr>
+
+    <h2>Tax Filing Practice</h2>
+    <p>Work through the forms in order. They begin with basic text inputs and finish with a more complete tax return.</p>
+
+    <div class="learning-goal">
+        <strong>Learning goal:</strong> notice how labels, names, values, validation, and grouped controls work together.
+    </div>
+
+    <hr>
+
+    <h2>1. Taxpayer Contact</h2>
+    <p>A simple form using text, email, telephone, and submit controls.</p>
+
+    <form>
+        <div class="form-group">
+            <label for="fullname">Full name</label>
+            <input type="text" id="fullname" name="fullname">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="telephone">Telephone</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="+968 1234 5678">
+        </div>
+
+        <button type="submit" class="btn-action">Save contact</button>
+    </form>
+
+    <hr>
+
+    <h2>2. Choose a Return</h2>
+    <p>This form adds select menus, dates, radio buttons, and grouped controls.</p>
+
+    <form>
+        <fieldset>
+            <legend>Filing details</legend>
+            
+            <div class="form-group">
+                <label for="tax-type">Tax type</label>
+                <select id="tax-type" name="tax-type">
+                    <option value="">Choose a tax type</option>
+                    <option value="vat">Value Added Tax (VAT)</option>
+                    <option value="income">Income Tax</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="period-ending">Period ending</label>
+                <input type="date" id="period-ending" name="period-ending">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Return frequency</legend>
+            
+            <div class="radio-group">
+                <input type="radio" id="monthly" name="frequency" value="monthly">
+                <label for="monthly">Monthly</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="quarterly" name="frequency" value="quarterly">
+                <label for="quarterly">Quarterly</label>
+            </div>
+            <div class="radio-group">
+                <input type="radio" id="annual" name="frequency" value="annual">
+                <label for="annual">Annual</label>
+            </div>
+        </fieldset>
+
+        <button type="submit" class="btn-action">Continue</button>
+    </form>
+
+    <hr>
+
+    <h2>3. Income and Deductions</h2>
+    <p>This form introduces number inputs, a datalist, a range control, a textarea, and calculated output.</p>
+
+    <form>
+        <fieldset>
+            <legend>Tax calculation</legend>
+            
+            <div class="form-group">
+                <label for="gross-income">Gross income (OMR)</label>
+                <input type="number" id="gross-income" name="gross-income">
+            </div>
+
+            <div class="form-group">
+                <label for="allowable-deductions">Allowable deductions (OMR)</label>
+                <input type="number" id="allowable-deductions" name="allowable-deductions">
+            </div>
+
+            <div class="calculation-output">
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <label for="business-sector">Business sector</label>
+            <input type="text" id="business-sector" name="business-sector" list="sectors">
+            <datalist id="sectors">
+                <option value="Retail">
+                <option value="Technology">
+                <option value="Manufacturing">
+                <option value="Services">
+            </datalist>
+        </div>
+
+        <div class="form-group">
+            <label for="confidence">Confidence in this estimate (1–10)</label>
+        </div>
+
+        <div class="form-group">
+            <label for="calculation-notes">Calculation notes</label>
+            <textarea id="calculation-notes" name="calculation-notes"></textarea>
+        </div>
+
+        <button type="submit" class="btn-action">Save calculation</button>
+    </form>
+
+    <hr>
+
+    <h2>4. Complete and Submit</h2>
+    <p>The final form combines document upload, checkboxes, month and time controls, a declaration, and reset and submit actions.</p>
+
+    <form>
+        <fieldset>
+            <legend>Supporting records</legend>
+            
+            <div class="form-group">
+                <label for="accounting-month">Accounting month</label>
+                <input type="month" id="accounting-month" name="accounting-month">
+            </div>
+
+            <div class="form-group">
+                <label for="file-upload">Upload supporting documents</label>
+                <p style="font-size: 0.85em; color: #555; margin: 3px 0 8px 0;">Accepted examples: PDF, CSV, JPG, or PNG.</p>
+                <input type="file" id="file-upload" name="file-upload" accept=".pdf,.csv,.jpg,.png" style="border: none; padding: 0;">
+            </div>
+
+            <div class="form-group">
+                <label>Records included:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="sales" name="records" value="sales">
+                    <label for="sales">Sales invoices</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="expense" name="records" value="expense">
+                    <label for="expense">Expense receipts</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="bank" name="records" value="bank">
+                    <label for="bank">Bank statement</label>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Declaration</legend>
+            
+            <div class="form-group">
+                <label for="signature">Type your full name as a signature</label>
+                <input type="text" id="signature" name="signature">
+            </div>
+
+            <div class="form-group">
+                <label for="time-signed">Time signed</label>
+                <input type="time" id="time signed" name="time-signed">
+            </div>
+
+            <div class="checkbox-group" style="margin-top: 15px;">
+                <input type="checkbox" id="confirm" name="confirm">
+                <label for="confirm">I confirm that the information in this practice return is accurate.</label>
+            </div>
+        </fieldset>
+
+        <div>
+            <button type="submit" class="btn-action">Submit practice return</button>
+            <button type="reset" class="btn-action" style="margin-left: 5px;">Clear form</button>
+        </div>
+    </form>
+
+    <script>
+        const grossInput = document.getElementById('gross-income');
+        const deductionsInput = document.getElementById('allowable-deductions');
+        const taxableIncomeSpan = document.getElementById('taxable-income');
+        const estimatedTaxSpan = document.getElementById('estimated-tax');
+
+        function updateCalculation() {
+            const gross = parseFloat(grossInput.value) || 0;
+            const deductions = parseFloat(deductionsInput.value) || 0;
+            let taxable = gross - deductions;
+            if (taxable < 0) taxable = 0;
+            
+            let tax = taxable * 0.05;
+
+            taxableIncomeSpan.textContent = taxable.toFixed(3);
+            estimatedTaxSpan.textContent = tax.toFixed(3);
+        }
+
+        grossInput.addEventListener('input', updateCalculation);
+        deductionsInput.addEventListener('input', updateCalculation);
+    </script>
+
+</body>
+</html>
